@@ -96,6 +96,9 @@ body {
     height: 1px;
     background-color: #777777;
     margin: 20px 0;
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .social-icons {

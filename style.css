@@ -92,6 +92,12 @@ body {
     border-radius: 5px;
 }
 
+.divider {
+    height: 1px;
+    background-color: #777777;
+    margin: 20px 0;
+}
+
 .social-icons {
     display: flex;
     gap: 13px;
@@ -99,7 +105,7 @@ body {
 
 .social-icons a {
     background-color: #555555;
-    padding: 10px 35px;
+    padding: 5px 30px;
     border-radius: 5px;
     color: #FFFFFF;
     text-decoration: none;

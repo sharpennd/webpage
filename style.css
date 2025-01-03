@@ -255,6 +255,12 @@ ul li {
     border-radius: 5px;
 }
 
+.mc-server a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .privacy {
     text-decoration: color(#FFFFFF);
     color: #FFFFFF;

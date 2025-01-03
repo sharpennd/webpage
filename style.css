@@ -268,3 +268,11 @@ ul li {
     width: 100%;
     text-align: center;
 }
+
+.privacy a {
+    text-decoration: color(#FFFFFF);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+}

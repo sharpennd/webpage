@@ -262,7 +262,7 @@ ul li {
 }
 
 .privacy a {
-    text-decoration: color(#FFFFFF);
+    text-decoration: none;
     color: #FFFFFF;
     padding: 10px 20px;
     width: 100%;

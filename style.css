@@ -264,7 +264,7 @@ ul li {
 .back-button {
     display: flex;
     gap: 23px;
-    padding: 26px;
+    padding-top: 23px;
 }
 
 .back-button a {

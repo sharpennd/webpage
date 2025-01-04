@@ -23,4 +23,4 @@ async function fetchServerStats() {
 }
 
 fetchServerStats();
-setInterval(fetchServerStats, 30000);
+setInterval(fetchServerStats, 15000);

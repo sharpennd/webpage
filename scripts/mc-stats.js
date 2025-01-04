@@ -8,7 +8,6 @@ async function fetchServerStats() {
 
         if (data.online) {
             const playerCount = `${data.players.online} / ${data.players.max}`;
-            const ping = data.debug.ping;
 
             document.getElementById("stats").innerHTML = `
                 <p>Server is <strong>online</strong></p>

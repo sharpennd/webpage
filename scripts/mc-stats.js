@@ -9,8 +9,10 @@ async function fetchServerStats() {
         if (data.online) {
             const playerCount = `${data.players.online} / ${data.players.max}`;
 
-            document.getElementById("stats").innerHTML = `
+            document.getElementById("server-status").innerHTML = `
                 <p>Server is <strong>online</strong></p>
+            `;
+            document.getElementById("player-amount").innerHTML = `
                 <p>Players: ${playerCount}</p>
             `;
         } else {

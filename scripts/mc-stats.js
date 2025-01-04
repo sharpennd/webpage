@@ -3,20 +3,16 @@ const apiEndpoint = `https://api.mcsrvstat.us/2/${serverIP}`;
 
 async function fetchServerStats() {
     try {
-        const startPing = Date.now();
         const response = await fetch(apiEndpoint);
-        const endPing = Date.now();
-
         const data = await response.json();
-        const ping = endPing - startPing;
 
         if (data.online) {
             const playerCount = `${data.players.online} / ${data.players.max}`;
+            const ping = data.debug.ping;
 
             document.getElementById("stats").innerHTML = `
                 <p>Server is <strong>online</strong></p>
                 <p>Players: ${playerCount}</p>
-                <p>Ping: ${ping} ms</p>
             `;
         } else {
             document.getElementById("stats").innerHTML = `<p>Server is <strong>offline</strong></p>`;

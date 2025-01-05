@@ -261,6 +261,10 @@ ul li {
     font-weight: bold;
 }
 
+.Pl3xMap a {
+    text-decoration: underline;
+}
+
 .back-button {
     display: flex;
     gap: 23px;

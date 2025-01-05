@@ -261,11 +261,6 @@ ul li {
     font-weight: bold;
 }
 
-.link a {
-    text-decoration: underline;
-    color: #FFFFFF;
-}
-
 .back-button {
     display: flex;
     gap: 23px;

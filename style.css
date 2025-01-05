@@ -261,8 +261,9 @@ ul li {
     font-weight: bold;
 }
 
-.Pl3xMap a {
+.link a {
     text-decoration: underline;
+    color: #FFFFFF;
 }
 
 .back-button {

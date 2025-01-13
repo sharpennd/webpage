@@ -1,3 +1,4 @@
+/* General Reset */
 body, h1, h2, p, a, article {
     margin: 0;
     padding: 0;
@@ -10,6 +11,9 @@ body, h1, h2, p, a, article {
     color: #ffffff; /* White text */
     line-height: 1.6;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   /* Header Styling */
@@ -19,7 +23,7 @@ body, h1, h2, p, a, article {
   }
   
   header a {
-    color: #9c9c9c; /* Light blue links */
+    color: #afafaf; /* Light blue links */
     font-size: 1.2em;
     text-decoration: none;
   }
@@ -37,14 +41,16 @@ body, h1, h2, p, a, article {
   /* Main Content */
   main {
     max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
   }
   
   article {
-    margin-bottom: 20px;
+    margin: 20px auto; /* Center articles */
+    padding: 20px;
     border: 1px solid #444444; /* Border for the box */
     border-radius: 8px; /* Rounded corners */
     background-color: #1c1c1c; /* Slightly lighter background for boxes */
+    text-align: center; /* Center align text */
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
@@ -57,7 +63,6 @@ body, h1, h2, p, a, article {
     display: block;
     text-decoration: none;
     color: inherit;
-    padding: 20px; /* Padding inside the box */
   }
   
   article h2 {
@@ -87,4 +92,5 @@ body, h1, h2, p, a, article {
     article h2 {
       font-size: 1.5em;
     }
-  } 
+  }
+  

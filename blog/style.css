@@ -1,4 +1,13 @@
-body {
+body, h1, h2, h3, p, a, ul, li {
+    font-family: Consolas, monaco, monospace;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: Consolas, monaco, monospace;
     background-color: #121212;
     color: #ffffff;
@@ -8,14 +17,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
-
-body, h1, h2, h3, p, a, ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
   }
   
   .content {

@@ -1,5 +1,0 @@
-collections:
-  blog:
-    output: true
-    permalink: /blog/:name/
-    title: "sharpennd - blog"

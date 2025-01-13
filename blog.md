@@ -3,8 +3,6 @@ layout: default
 title: "sharpennd - blog"
 ---
 
-# sharpennd's Blog
-
 Here are all my posts:
 
 <ul>

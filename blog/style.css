@@ -6,7 +6,7 @@ body, h1, h2, p, a, div {
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: Consolas, monaco, monospace;
     background-color: #121212; /* Dark background */
     color: #ffffff; /* White text */
     line-height: 1.6;
@@ -26,7 +26,7 @@ body, h1, h2, p, a, div {
   }
   
   header a {
-    color: #0d99ff; /* Blue link */
+    color: #838383; /* Blue link */
     text-decoration: none;
     font-size: 1.2em;
   }

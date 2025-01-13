@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, p, a, article {
+body, h1, h2, p, a, div {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,70 +13,57 @@ body, h1, h2, p, a, article {
     padding: 20px;
   }
   
+  /* Center Content */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
   /* Header Styling */
   header {
-    margin-bottom: 40px;
-    text-align: center;
+    margin-bottom: 20px;
   }
   
   header a {
-    color: #8f8f8f;
+    color: #0d99ff; /* Blue link */
+    text-decoration: none;
     font-size: 1.2em;
   }
   
-  header h1 {
-    font-size: 3em;
-    margin-top: 10px;
-    font-weight: bold;
+  header a:hover {
+    text-decoration: underline;
   }
   
-  /* Main Content */
+  /* Main Styling */
   main {
-    max-width: 800px;
-    margin: 0 auto;
+    padding-top: 20px;
   }
   
-  article {
-    margin-bottom: 40px;
-    padding: 20px;
-    border: 1px solid #444444;
-    border-radius: 8px;
-    background-color: #1c1c1c;
-  }
-  
-  article h2 a {
-    color: #0d99ff;
-    font-size: 1.8em;
+  main h1 {
+    font-size: 2.5em;
     font-weight: bold;
-    text-decoration: none;
+    color: #838383;
+    margin-bottom: 10px;
   }
   
-  article h2 a:hover {
-    color: #ffffff; /* White on hover */
-  }
-  
-  article .date {
-    color: #aaaaaa; /* Grey for dates */
+  main .date {
     font-size: 0.9em;
-    margin-top: 5px;
+    color: #aaaaaa; /* Light grey date */
+    margin-bottom: 20px;
   }
   
-  article .summary {
-    margin-top: 10px;
-  }
-  
-  /* Links */
-  a {
-    text-decoration: none;
+  main p {
+    font-size: 1.2em;
   }
   
   /* Responsive Design */
   @media (max-width: 600px) {
-    header h1 {
-      font-size: 2.5em;
+    main h1 {
+      font-size: 2em;
     }
   
-    article h2 a {
-      font-size: 1.5em;
+    header a {
+      font-size: 1em;
     }
   }  

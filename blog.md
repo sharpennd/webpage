@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "sharpennd's Blog"
+title: "sharpennd - blog"
 ---
 
 # sharpennd's Blog

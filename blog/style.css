@@ -16,17 +16,20 @@ body, h1, h2, p, a, article {
     align-items: center;
   }
   
-  /* Header Styling */
   header {
     margin-bottom: 40px;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
   
   header a {
-    color: #afafaf; /* Light blue links */
+    color: #0d99ff; /* Light blue links */
     font-size: 1.2em;
     text-decoration: none;
-  }
+    margin-left: 20px;
+  }  
   
   header a:hover {
     text-decoration: underline;

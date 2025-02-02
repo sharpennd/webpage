@@ -1,1 +1,3 @@
-window.location.replace("/home");
+if (window.location.pathname === "/") {
+    window.location.replace("/home");
+}

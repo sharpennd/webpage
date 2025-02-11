@@ -1,0 +1,149 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Consolas, monaco, monospace;
+    background-image: url('/images/stars.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.privacy-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.privacy-box h1, .privacy-box h2 {
+    font-family: Consolas, monaco, monospace;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.privacy-box h1 {
+    font-size: 36px;
+}
+
+.privacy-box h2 {
+    font-size: 28px;
+}
+
+.privacy-box p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+.privacy-box a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.privacy-box a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .privacy-box {
+        padding: 15px;
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .privacy-box h1 {
+        font-size: 28px;
+    }
+
+    .privacy-box h2 {
+        font-size: 22px;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 1px solid #222;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+    .sidebar {
+      display: none;
+    }
+  }
+
+  .footer {
+    background-color: #4545455b;
+    padding: 17px;
+    text-align: center;
+    width: 100vw;
+}
+
+.footer a {
+    color: #ffffff;
+    font-family: Consolas, monaco, monospace;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+  

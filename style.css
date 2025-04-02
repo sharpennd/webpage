@@ -1,4 +1,120 @@
-/* Updated CSS for Pronouns and Extra Images */
+body {
+    margin: 0;
+    font-family: Consolas, monaco, monospace;
+    background-image: url('images/stars.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: rgba(15, 15, 15, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #F0F0F0;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-menu ul li {
+    margin: 14px 0;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #333333;
+    padding: 5px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #555555;
+}
+
+.icons {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+.main-content {
+    width: 75%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro, .social-links, .projects, .mc-server {
+    background-color: rgb(51, 51, 51);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #777777;
+    margin: 20px 0;
+}
+
+.social-icons, .projects-icons, .back-button {
+    display: flex;
+    gap: 13px;
+}
+
+.social-icons a, .projects-icons a, .back-button a {
+    background-color: #555555;
+    padding: 5px 30px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover, .projects-icons a:hover, .back-button a:hover {
+    background-color: #777777;
+}
+
+.sidebar-icons img {
+    width: 37px;
+    height: auto;
+}
+
 .image-container {
     width: auto;
     height: auto;
@@ -22,4 +138,12 @@
     width: 60px;
     height: auto;
     border-radius: 5px;
+}
+
+.privacy a {
+    text-decoration: underline;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
 }

@@ -131,8 +131,10 @@ body {
 }
 
 .flags {
-    width: auto;
-    height: auto;
+    width: 88px;
+    height: 31px;
+    margin: 5px;
+    border-radius: 3px;
     display: inline-block;
 }
 

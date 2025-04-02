@@ -130,6 +130,12 @@ body {
     display: inline-block;
 }
 
+.flags {
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+
 .pin-image {
     width: 80px;
     height: auto;

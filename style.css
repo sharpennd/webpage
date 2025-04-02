@@ -289,17 +289,11 @@ ul li {
 }
 
 .button-box {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(43, 43, 43, 0.485);
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
     text-align: center;
-}
-
-.button-box h3 {
-    color: #FFFFFF;
-    font-size: 1.2em;
-    margin-bottom: 10px;
 }
 
 .button-box a img {
@@ -307,5 +301,4 @@ ul li {
     height: 31px;
     margin: 5px;
     border-radius: 3px;
-    transition: transform 0.3s, box-shadow 0.3s;
 }

@@ -1,24 +1,16 @@
-function resizeEverything() {
+function resizeTextOnly() {
   const width = window.innerWidth;
-  const allElements = document.querySelectorAll('*');
+  const scale = width > 1200 ? 1 : width > 768 ? 0.95 : 0.85;
 
-  allElements.forEach(el => {
-    if (!el.offsetParent || el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+  document.querySelectorAll('*').forEach(el => {
+    if (!el.offsetParent || ['SCRIPT', 'STYLE'].includes(el.tagName)) return;
 
-    if (width > 1200) {
-      el.style.fontSize = '';
-      el.style.padding = '';
-    } else if (width > 768) {
-      el.style.fontSize = '0.95em';
-      el.style.padding = '0.6em';
-    } else {
-      el.style.fontSize = '0.85em';
-      el.style.padding = '0.4em';
-    }
-    if (el.tagName === 'BUTTON' || el.tagName === 'A') {
-      el.style.minWidth = 'min-content';
+    const computedSize = window.getComputedStyle(el).fontSize;
+    const baseSize = parseFloat(computedSize);
+    if (!isNaN(baseSize)) {
+      el.style.fontSize = `${baseSize * scale}px`;
     }
   });
 }
-document.addEventListener('DOMContentLoaded', resizeEverything);
-window.addEventListener('resize', resizeEverything);
+window.addEventListener('DOMContentLoaded', resizeTextOnly);
+window.addEventListener('resize', resizeTextOnly);

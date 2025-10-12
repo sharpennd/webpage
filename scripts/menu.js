@@ -1,20 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.querySelector('.sidebar');
+const mainContent = document.querySelector('.main-content');
 
-    if (!hamburger || !sidebar) return;
+hamburger.addEventListener('click', () => {
+    const isActive = sidebar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('active', isActive);
+    mainContent.classList.toggle('shifted', isActive);
+});
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        sidebar.classList.toggle('active');
-    });
-
-    // Optional: close sidebar when clicking a nav link
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            sidebar.classList.remove('active');
-        });
-    });
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    hamburger.classList.remove('active');
+    overlay.classList.remove('active');
+    mainContent.classList.remove('shifted');
 });

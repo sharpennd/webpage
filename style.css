@@ -403,11 +403,6 @@ html, body {
     display: block;
     opacity: 1;
 }
-
-.hamburger {
-    z-index: 2000 !important;
-}
-
 .sidebar {
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -415,6 +410,7 @@ html, body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        z-index: 2000 !important;
     }
 
     .container {

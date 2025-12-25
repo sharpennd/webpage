@@ -49,7 +49,12 @@
       width:100%;
       display:flex;
       align-items:center;
+      justify-content:space-between;
       padding:8px 12px;
+    }
+
+    .header-inner .link-btn{
+      margin-top:0;
     }
 
     main.container{flex:1}
@@ -120,7 +125,8 @@
       display:flex;
       flex-direction:column;
       gap:2px;
-      max-width:220px;
+      max-width:280px;
+      overflow:hidden;
     }
 
     .spotify-track-title{
@@ -131,13 +137,22 @@
       text-overflow:ellipsis;
     }
 
-    .spotify-track-artist,
-    .spotify-album-name{
+    .spotify-track-artist{
       font-size:11px;
       color:var(--muted);
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      animation:scroll-text 10s linear infinite;
+    }
+
+    @keyframes scroll-text{
+      0%,20%{transform:translateX(0)}
+      80%,100%{transform:translateX(calc(-100% + 200px))}
+    }
+
+    .spotify-track-artist:hover{
+      animation-play-state:paused;
     }
 
     .progress-wrapper{
@@ -242,6 +257,7 @@
 <header class="site-header">
   <div class="header-inner">
     <img src="../assets/paw.png" width="26" height="26">
+    <a href="https://jellyfin.sharpennd.xyz" class="link-btn"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/jellyfin.svg">Jellyfin</a>
   </div>
 </header>
 
@@ -316,7 +332,7 @@
       spotifyLoading.style.display="none"
       spotifyContent.style.display="block"
       spotifyBox.classList.add("spotify-playing")
-      spotifyContent.innerHTML=`<div class="spotify-info"><div class="album-art"><img src="${d.album_art_url}"></div><div class="spotify-text"><div class="spotify-track-title">${d.song}</div><div class="spotify-track-artist">${d.artist}</div><div class="spotify-album-name">${d.album}</div><div class="progress-wrapper"><span>${format(e)}</span><div class="progress-bar-container"><div class="progress-bar" style="width:${p}%"></div></div><span>${format(t)}</span></div></div></div>`
+      spotifyContent.innerHTML=`<div class="spotify-info"><div class="album-art"><img src="${d.album_art_url}"></div><div class="spotify-text"><div class="spotify-track-title">${d.song}</div><div class="spotify-track-artist">${d.artist}</div><div class="progress-wrapper"><span>${format(e)}</span><div class="progress-bar-container"><div class="progress-bar" style="width:${p}%"></div></div><span>${format(t)}</span></div></div></div>`
     }catch{spotifyStatus.textContent="Error loading Spotify"}
   }
 

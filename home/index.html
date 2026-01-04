@@ -1,258 +1,296 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>sharpennd.xyz</title>
-  <link rel="icon" href="../assets/paw-64.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>sharpennd.xyz</title>
+<link rel="icon" href="../assets/paw-64.ico" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#0e0e0e;
-      --text:#f5f5f5;
-      --muted:#aaa;
-      --border:#2a2a2a;
-      --radius:12px;
-      --max-w:1050px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.4;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-    .container{
-      max-width:var(--max-w);
-      margin:0 auto;
-      padding:0 18px;
-      width:100%;
-    }
-    .site-header{
-      position:sticky;
-      top:0;
-      background:rgba(0,0,0,.85);
-      backdrop-filter:blur(6px);
-      border-bottom:1px solid var(--border);
-      z-index:50;
-    }
-    .header-inner{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:8px 12px;
-    }
-    .header-inner .link-btn{
-      margin-top:0;
-    }
-    main.container{flex:1}
-    .hero{
-      display:flex;
-      gap:22px;
-      padding:14px 16px;
-      margin-top:10px;
-      align-items:flex-start;
-      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
-      border-radius:var(--radius);
-      box-shadow:0 8px 30px rgba(0,0,0,.6);
-    }
-    .avatar{
-      width:90px;
-      height:90px;
-      border-radius:12px;
-      overflow:hidden;
-      flex-shrink:0;
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .hero-text{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .hero-text h3{
-      font-size:18px;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      gap:6px;
-    }
-    .spotify_currently-playing{
-      display:inline-flex;
-      padding:6px 10px;
-      border-radius:10px;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--border);
-      width:fit-content;
-    }
-    .spotify-playing{
-      border-color:#fff;
-      box-shadow:0 0 10px rgba(255,255,255,.45);
-    }
-    .spotify-info{
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    .album-art{
-      width:38px;
-      height:38px;
-      border-radius:6px;
-      overflow:hidden;
-      flex-shrink:0;
-    }
-    .album-art img{width:100%;height:100%;object-fit:cover}
-    .spotify-text{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      max-width:280px;
-      overflow:hidden;
-    }
-    .spotify-track-title{
-      font-weight:600;
-      font-size:13px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .spotify-track-artist{
-      font-size:11px;
-      color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      animation:scroll-text 10s linear infinite;
-    }
-    @keyframes scroll-text{
-      0%,20%{transform:translateX(0)}
-      80%,100%{transform:translateX(calc(-100% + 200px))}
-    }
-    .spotify-track-artist:hover{
-      animation-play-state:paused;
-    }
-    .progress-wrapper{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      font-size:9px;
-      margin-top:3px;
-    }
-    .progress-bar-container{
-      width:90px;
-      height:4px;
-      background:rgba(255,255,255,.15);
-      border-radius:3px;
-      overflow:hidden;
-      flex-shrink:0;
-    }
-    .progress-bar{height:100%;background:#fff}
-    .loading-row{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:12px;
-      color:var(--muted);
-    }
-    .spotify-spinner{
-      width:14px;
-      height:14px;
-      border:2px solid rgba(255,255,255,.15);
-      border-top-color:#fff;
-      border-radius:50%;
-      animation:spin .7s linear infinite;
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .card{
-      margin-top:12px;
-      padding:14px;
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.02);
-      border:1px solid var(--border);
-      font-size:14px;
-    }
-    .inline-list{margin:6px 0 0 18px}
-    .inline-list li{margin:3px 0}
-    .link-btn{
-      margin-top:8px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 11px;
-      border-radius:10px;
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      text-decoration:none;
-      color:var(--text);
-      font-size:13px;
-      position:relative;
-      transition:box-shadow .25s ease,transform .25s ease,border-color .25s ease;
-    }
-    .link-btn img,
-    .link-btn svg{
-      width:16px;
-      height:16px;
-      filter:invert(90%);
-      display:block;
-    }
-    .link-btn:hover{
-      border-color:#ffffff;
-      box-shadow:
-        0 0 0 1px rgba(191, 191, 191, 0.4),
-        0 0 14px rgba(197, 197, 197, 0.45),
-        0 0 28px rgba(182, 182, 182, 0.25);
-      transform:translateY(-1px);
-    }
-    .site-footer{
-      margin-top:10px;
-      padding:8px 0;
-      text-align:center;
-      color:var(--muted);
-      border-top:1px solid var(--border);
-      font-size:12px;
-    }
-    @media(max-width:830px){
-      .hero{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-      }
-    }
-    .pronouns{
-      font-style:italic;
-      font-weight:normal;
-      font-size:.9em;
-    }
-    .site-header .link-btn:hover{
-      box-shadow:none;
-      transform:none;
-      border-color:var(--border);
-    }
-    .pride-flags {
-      display: inline-flex;
-      gap: 6px;
-      margin-left: 10px;
-      vertical-align: middle;
-    } 
-    .pride-flag {
-      width: 27px;
-      height: 17px;
-      object-fit: cover;
-      border-radius: 2px;
-      cursor: default;
-      display: inline-block;
-    }
-  </style>
+<style>
+:root{
+  --bg:#0e0e0e;
+  --text:#f5f5f5;
+  --muted:#aaa;
+  --border:#2a2a2a;
+  --radius:12px;
+  --max-w:1050px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+.container{
+  max-width:var(--max-w);
+  margin:0 auto;
+  padding:0 18px;
+  width:100%;
+}
+.site-header{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--border);
+  z-index:50;
+}
+.header-inner{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:8px 12px;
+}
+.header-inner .link-btn{
+  margin-top:0;
+}
+main.container{flex:1}
+.hero{
+  display:flex;
+  gap:22px;
+  padding:14px 16px;
+  margin-top:10px;
+  align-items:flex-start;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
+  border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(0,0,0,.6);
+}
+.avatar{
+  width:90px;
+  height:90px;
+  border-radius:12px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.hero-text{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.hero-text h3{
+  font-size:18px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.spotify_currently-playing{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:10px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  width:fit-content;
+}
+.spotify-playing{
+  border-color:#fff;
+  box-shadow:0 0 10px rgba(255,255,255,.45);
+}
+.spotify-info{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.album-art{
+  width:38px;
+  height:38px;
+  border-radius:6px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.album-art img{width:100%;height:100%;object-fit:cover}
+.spotify-text{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  max-width:280px;
+  overflow:hidden;
+}
+.spotify-track-title{
+  font-weight:600;
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.spotify-track-artist{
+  font-size:11px;
+  color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  animation:scroll-text 10s linear infinite;
+}
+@keyframes scroll-text{
+  0%,20%{transform:translateX(0)}
+  80%,100%{transform:translateX(calc(-100% + 200px))}
+}
+.spotify-track-artist:hover{
+  animation-play-state:paused;
+}
+.progress-wrapper{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:9px;
+  margin-top:3px;
+}
+.progress-bar-container{
+  width:90px;
+  height:4px;
+  background:rgba(255,255,255,.15);
+  border-radius:3px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.progress-bar{height:100%;background:#fff}
+.loading-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  color:var(--muted);
+}
+.spotify-spinner{
+  width:14px;
+  height:14px;
+  border:2px solid rgba(255,255,255,.15);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.card{
+  margin-top:12px;
+  padding:14px;
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.02);
+  border:1px solid var(--border);
+  font-size:14px;
+}
+.inline-list{margin:6px 0 0 18px}
+.inline-list li{margin:3px 0}
+.link-btn{
+  margin-top:8px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 11px;
+  border-radius:10px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  text-decoration:none;
+  color:var(--text);
+  font-size:13px;
+  position:relative;
+  transition:box-shadow .25s ease,transform .25s ease,border-color .25s ease;
+}
+.link-btn img,
+.link-btn svg{
+  width:16px;
+  height:16px;
+  filter:invert(90%);
+  display:block;
+}
+.link-btn:hover{
+  border-color:#ffffff;
+  box-shadow:
+    0 0 0 1px rgba(191, 191, 191, 0.4),
+    0 0 14px rgba(197, 197, 197, 0.45),
+    0 0 28px rgba(182, 182, 182, 0.25);
+  transform:translateY(-1px);
+}
+
+/* Tooltip CSS for social links only */
+.link-btn[data-tooltip]::after{
+  content:attr(data-tooltip);
+  position:absolute;
+  bottom:120%;
+  left:50%;
+  transform:translateX(-50%) translateY(6px);
+  background:#ffffff;
+  color:#000;
+  font-size:11px;
+  padding:6px 9px;
+  border-radius:8px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+  z-index:100;
+}
+.link-btn[data-tooltip]::before{
+  content:"";
+  position:absolute;
+  bottom:calc(120% - 4px);
+  left:50%;
+  transform:translateX(-50%);
+  border-width:6px;
+  border-style:solid;
+  border-color:#ffffff transparent transparent transparent;
+  opacity:0;
+  transition:opacity .2s ease;
+}
+.link-btn[data-tooltip]:hover::after,
+.link-btn[data-tooltip]:hover::before{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+.site-footer{
+  margin-top:10px;
+  padding:8px 0;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  font-size:12px;
+}
+@media(max-width:830px){
+  .hero{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+}
+.pronouns{
+  font-style:italic;
+  font-weight:normal;
+  font-size:.9em;
+}
+.site-header .link-btn:hover{
+  box-shadow:none;
+  transform:none;
+  border-color:var(--border);
+}
+.pride-flags {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 10px;
+  vertical-align: middle;
+} 
+.pride-flag {
+  width: 27px;
+  height: 17px;
+  object-fit: cover;
+  border-radius: 2px;
+  cursor: default;
+  display: inline-block;
+}
+</style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-inner">
     <img src="../assets/paw.png" width="26" height="26">
-    <a href="https://jellyfin.sharpennd.xyz" target="_blank" class="link-btn">
+    <a href="https://jellyfin.sharpennd.xyz" target="_blank" class="link-btn" data-tooltip="Jellyfin">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/jellyfin.svg">Jellyfin
     </a>
   </div>
@@ -295,22 +333,22 @@
     </ul>
     <p>...And a whole lot more!</p>
     <p style="margin-top:6px">Below is a list of my socials and other links where you can view my content, support me, or contact me!</p>
-    <a href="mailto:grey@sharpennd.xyz" target="_blank" class="link-btn">
+    <a href="mailto:grey@sharpennd.xyz" target="_blank" class="link-btn" data-tooltip="grey@sharpennd.xyz">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg">Email
     </a>
-    <a href="https://github.com/sharpennd" target="_blank" class="link-btn">
+    <a href="https://github.com/sharpennd" target="_blank" class="link-btn" data-tooltip="sharpennd">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">GitHub
     </a>
-    <a href="https://www.roblox.com/users/736386964/profile" target="_blank" class="link-btn">
+    <a href="https://www.roblox.com/users/736386964/profile" target="_blank" class="link-btn" data-tooltip="Niqhtlyy">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/roblox.svg">Roblox
     </a>
-    <a href="https://twitter.com/sharpennd" target="_blank" class="link-btn">
+    <a href="https://twitter.com/sharpennd" target="_blank" class="link-btn" data-tooltip="@sharpennd">
       <svg viewBox="0 0 30 30"><path d="M28 6.937c-.957.425-1.985.711-3.064.84 1.102-.66 1.947-1.705 2.345-2.951-1.03.611-2.172 1.055-3.388 1.295-.973-1.037-2.359-1.685-3.893-1.685-2.946 0-5.334 2.389-5.334 5.334 0 .418.048.826.138 1.215C8.371 10.762 4.441 8.638 1.809 5.41c-.458.789-.721 1.705-.721 2.684 0 1.85.941 3.483 2.372 4.439-.874-.028-1.697-.268-2.416-.667v.067c0 2.585 1.838 4.741 4.279 5.23-.447.122-.919.187-1.406.187-.343 0-.678-.034-1.003-.095.679 2.119 2.649 3.662 4.983 3.705-1.825 1.431-4.125 2.284-6.625 2.284-.43 0-.855-.025-1.273-.075 2.361 1.513 5.164 2.396 8.177 2.396 9.812 0 15.176-8.128 15.176-15.177 0-.231-.005-.461-.015-.69C26.38 8.945 27.285 8.006 28 6.937z"/></svg>Twitter
     </a>
-    <a href="https://discord.com/users/340138001252220939/" target="_blank" class="link-btn">
+    <a href="https://discord.com/users/340138001252220939/" target="_blank" class="link-btn" data-tooltip="sharpennd">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">Discord
     </a>
-    <a href="https://ko-fi.com/sharpennd" target="_blank" class="link-btn">
+    <a href="https://ko-fi.com/sharpennd" target="_blank" class="link-btn" data-tooltip="sharpennd">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kofi.svg">Ko-Fi
     </a>
   </section>
@@ -321,31 +359,33 @@
 </footer>
 
 <script>
-  document.getElementById("currentYear").textContent=new Date().getFullYear()
-  const spotifyBox=document.getElementById("spotifyBox")
-  const spotifyLoading=document.getElementById("spotifyLoading")
-  const spotifyContent=document.getElementById("spotifyContent")
-  const spotifyStatus=document.getElementById("spotifyStatus")
-  const format=ms=>{
-    const s=Math.floor(ms/1000)
-    return`${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`
+document.getElementById("currentYear").textContent = new Date().getFullYear()
+const spotifyBox = document.getElementById("spotifyBox")
+const spotifyLoading = document.getElementById("spotifyLoading")
+const spotifyContent = document.getElementById("spotifyContent")
+const spotifyStatus = document.getElementById("spotifyStatus")
+const format = ms => {
+  const s = Math.floor(ms/1000)
+  return `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`
+}
+async function loadSpotify(){
+  try{
+    const r = await fetch("https://api.lanyard.rest/v1/users/340138001252220939")
+    const d = (await r.json()).data.spotify
+    if(!d){spotifyStatus.textContent="Not listening to anything";return}
+    const e = Date.now()-d.timestamps.start
+    const t = d.timestamps.end-d.timestamps.start
+    const p = Math.min(e/t*100,100)
+    spotifyLoading.style.display="none"
+    spotifyContent.style.display="block"
+    spotifyBox.classList.add("spotify-playing")
+    spotifyContent.innerHTML = `<div class="spotify-info"><div class="album-art"><img src="${d.album_art_url}"></div><div class="spotify-text"><div class="spotify-track-title">${d.song}</div><div class="spotify-track-artist">${d.artist}</div><div class="progress-wrapper"><span>${format(e)}</span><div class="progress-bar-container"><div class="progress-bar" style="width:${p}%"></div></div><span>${format(t)}</span></div></div></div>`
+  }catch{
+    spotifyStatus.textContent="Error loading Spotify"
   }
-  async function loadSpotify(){
-    try{
-      const r=await fetch("https://api.lanyard.rest/v1/users/340138001252220939")
-      const d=(await r.json()).data.spotify
-      if(!d){spotifyStatus.textContent="Not listening to anything";return}
-      const e=Date.now()-d.timestamps.start
-      const t=d.timestamps.end-d.timestamps.start
-      const p=Math.min(e/t*100,100)
-      spotifyLoading.style.display="none"
-      spotifyContent.style.display="block"
-      spotifyBox.classList.add("spotify-playing")
-      spotifyContent.innerHTML=`<div class="spotify-info"><div class="album-art"><img src="${d.album_art_url}"></div><div class="spotify-text"><div class="spotify-track-title">${d.song}</div><div class="spotify-track-artist">${d.artist}</div><div class="progress-wrapper"><span>${format(e)}</span><div class="progress-bar-container"><div class="progress-bar" style="width:${p}%"></div></div><span>${format(t)}</span></div></div></div>`
-    }catch{spotifyStatus.textContent="Error loading Spotify"}
-  }
-  loadSpotify()
-  setInterval(loadSpotify,1000)
+}
+loadSpotify()
+setInterval(loadSpotify,1000)
 </script>
 </body>
 </html>

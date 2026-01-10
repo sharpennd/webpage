@@ -35,7 +35,6 @@ body{
   width:100%;
 }
 
-/* HEADER */
 .site-header{
   position:sticky;
   top:0;
@@ -55,12 +54,37 @@ body{
   margin-top:0;
 }
 
-/* MAIN (sticky footer key) */
+.nav-left{
+  display:flex;
+  align-items:center;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-left:18px;
+}
+
+.nav-link{
+  font-size:13px;
+  font-weight:500;
+  color:var(--muted);
+  text-decoration:none;
+  padding:4px 6px;
+  border-radius:6px;
+  transition:color .2s ease, background .2s ease;
+}
+
+.nav-link:hover{
+  color:var(--text);
+  background:rgba(255,255,255,.06);
+}
+
 .site-main{
   flex:1;
 }
 
-/* LINKS */
 .inline-list{margin:6px 0 0 18px}
 .inline-list li{margin:3px 0}
 
@@ -159,6 +183,10 @@ body{
   <div class="header-inner">
     <div style="display:flex;align-items:center;">
       <img src="../assets/paw.png" width="26" height="26">
+    <nav class="nav-links">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../blog/index.html" class="nav-link">Blog</a>
+  </nav>
     </div>
 
     <a href="https://jellyfin.sharpennd.xyz" target="_blank" class="link-btn">

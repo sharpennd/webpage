@@ -45,6 +45,33 @@ body{
   border-bottom:1px solid var(--border);
 }
 
+.nav-left{
+  display:flex;
+  align-items:center;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-left:18px;
+}
+
+.nav-link{
+  font-size:13px;
+  font-weight:500;
+  color:var(--muted);
+  text-decoration:none;
+  padding:4px 6px;
+  border-radius:6px;
+  transition:color .2s ease, background .2s ease;
+}
+
+.nav-link:hover{
+  color:var(--text);
+  background:rgba(255,255,255,.06);
+}
+
 .header-inner{
   display:flex;
   justify-content:space-between;
@@ -107,9 +134,16 @@ body{
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <a href="../../index.html">
-      <img src="../../assets/paw.png" width="26" height="26">
-    </a>
+    <div class="nav-left">
+      <a href="../../index.html">
+        <img src="../../assets/paw.png" width="26" height="26">
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../blog/index.html" class="nav-link">Blog</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -117,7 +151,7 @@ body{
   <article class="post container">
     <h1>First Blog Post!! :D</h1>
     <div class="post-meta">
-      Published January 9, 2026 · 3 min read
+      Published January 9, 2026 · 1 min read
     </div>
 
     <div class="post-content">

@@ -214,7 +214,7 @@ async function sendForm(){
   status.textContent = "Sending...";
 
   try{
-    const res = await fetch("https://ask.sharpennd.xyz", {
+    const res = await fetch("https://your-worker-name.your-account.workers.dev", {
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body: JSON.stringify(data)
